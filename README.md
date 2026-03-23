@@ -40,10 +40,10 @@ go build -o ddog ./cmd/ddog
 ## Examples
 
 ```bash
-./ddog config doctor
-./ddog docs summary
-./ddog monitor list --output json
-./ddog metric query --query 'avg:system.load.1{*}' --last 1h
+ddog config doctor
+ddog docs summary
+ddog monitor list --output json
+ddog metric query --query 'avg:system.load.1{*}' --last 1h
 ```
 
 See [docs/usage.md](docs/usage.md) for more examples.

@@ -11,8 +11,8 @@ go build -o ddog ./cmd/ddog
 Check local configuration:
 
 ```bash
-./ddog config doctor
-./ddog --env-file .env config doctor --output json
+ddog config doctor
+ddog --env-file .env config doctor --output json
 ```
 
 ## Authentication
@@ -32,10 +32,10 @@ Secrets are never accepted as CLI flags.
 Use help output as the primary interface:
 
 ```bash
-./ddog --help
-./ddog docs summary
-./ddog monitor --help
-./ddog log search --help
+ddog --help
+ddog docs summary
+ddog monitor --help
+ddog log search --help
 ```
 
 ## Output modes
@@ -46,8 +46,8 @@ Use help output as the primary interface:
 Examples:
 
 ```bash
-./ddog monitor list --output json
-./ddog docs commands --output json
+ddog monitor list --output json
+ddog docs commands --output json
 ```
 
 ## Read-only v1 commands
@@ -55,37 +55,37 @@ Examples:
 ### Monitors
 
 ```bash
-./ddog monitor list
-./ddog monitor list --name api --limit 20
-./ddog monitor get 123456
+ddog monitor list
+ddog monitor list --name api --limit 20
+ddog monitor get 123456
 ```
 
 ### Dashboards
 
 ```bash
-./ddog dashboard list --count 20
-./ddog dashboard get abc-def-ghi
+ddog dashboard list --count 20
+ddog dashboard get abc-def-ghi
 ```
 
 ### Hosts
 
 ```bash
-./ddog host list --filter web
-./ddog host get web-01
+ddog host list --filter web
+ddog host get web-01
 ```
 
 ### Metrics
 
 ```bash
-./ddog metric query --query 'avg:system.load.1{*}' --last 1h
-./ddog metric query --query 'avg:system.cpu.user{env:prod}' --from 2026-03-21T09:00:00Z --to 2026-03-21T10:00:00Z
+ddog metric query --query 'avg:system.load.1{*}' --last 1h
+ddog metric query --query 'avg:system.cpu.user{env:prod}' --from 2026-03-21T09:00:00Z --to 2026-03-21T10:00:00Z
 ```
 
 ### Logs
 
 ```bash
-./ddog log search --query 'service:web status:error' --last 15m
-./ddog log search --query 'env:prod' --index main --limit 20 --output json
+ddog log search --query 'service:web status:error' --last 15m
+ddog log search --query 'env:prod' --index main --limit 20 --output json
 ```
 
 ## Notes
