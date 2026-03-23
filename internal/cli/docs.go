@@ -41,7 +41,7 @@ type docTopic struct {
 
 var docsSummary = docTopic{
 	Name:    "summary",
-	Summary: "ddog provides a domain-first Datadog CLI with concise default output and JSON for automation.",
+	Summary: "ddog provides a read-oriented Datadog CLI with concise terminal output and JSON for automation.",
 	KeyPoints: []string{
 		"Use 'ddog <command> --help' to learn each command.",
 		"Offline-safe commands work without credentials.",

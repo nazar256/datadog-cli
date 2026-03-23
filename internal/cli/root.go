@@ -28,8 +28,8 @@ func newRootCmdWithOptions(opts *GlobalOptions) *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:   "ddog",
-		Short: "Query Datadog from the terminal",
-		Long: strings.TrimSpace(`ddog is a Datadog CLI for humans and coding agents.
+		Short: "Read Datadog monitors, dashboards, hosts, metrics, and logs",
+		Long: strings.TrimSpace(`ddog is a Datadog CLI for humans, coding agents, and automation.
 
 Use 'ddog <command> --help' to explore the command tree. Offline-safe commands such as
 'version', 'docs', and 'config doctor' work without Datadog credentials. Live Datadog

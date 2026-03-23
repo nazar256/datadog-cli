@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Run tests
+        run: go test ./...
+
+      - name: Build CLI
+        run: go build ./cmd/ddog
+
+      - name: Validate help and built-in docs
+        run: |
+          go run ./cmd/ddog --help >/dev/null
+          go run ./cmd/ddog docs commands --output json >/dev/null

@@ -33,6 +33,9 @@ func TestRootCmdHelp(t *testing.T) {
 	}
 
 	// Check for commands
+	if !strings.Contains(output, "ddog is a Datadog CLI for humans, coding agents, and automation.") {
+		t.Errorf("expected help to contain updated product description")
+	}
 	if !strings.Contains(output, "version") {
 		t.Errorf("expected help to contain 'version' command")
 	}

@@ -1,4 +1,4 @@
-# Datadog CLI Usage
+# Datadog CLI usage
 
 ## Quick start
 
@@ -11,8 +11,8 @@ go build -o ddog ./cmd/ddog
 Check local configuration:
 
 ```bash
-ddog config doctor
-ddog --env-file .env config doctor --output json
+./ddog config doctor
+./ddog --env-file .env config doctor --output json
 ```
 
 ## Authentication
@@ -34,8 +34,17 @@ Use help output as the primary interface:
 ```bash
 ddog --help
 ddog docs summary
+ddog docs commands --output json
 ddog monitor --help
 ddog log search --help
+```
+
+Shell completion is also available:
+
+```bash
+ddog completion bash
+ddog completion zsh
+ddog completion fish
 ```
 
 ## Output modes
@@ -93,3 +102,5 @@ ddog log search --query 'env:prod' --index main --limit 20 --output json
 - All shipped v1 Datadog commands are read-only.
 - Empty results are valid outcomes.
 - Supported sites are: `us1`, `us3`, `us5`, `eu`, `ap1`, `ap2`, `us1-fed`, and their canonical hostnames.
+- Install and release details live in [install.md](install.md).
+- AI-agent-specific guidance lives in [for-ai-agents.md](for-ai-agents.md).

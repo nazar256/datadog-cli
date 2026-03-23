@@ -131,7 +131,7 @@ func TestDocsIgnoreInvalidSite(t *testing.T) {
 	if err := cmd.Execute(); err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
-	if !strings.Contains(buf.String(), "ddog provides a domain-first Datadog CLI") {
+	if !strings.Contains(buf.String(), "ddog provides a read-oriented Datadog CLI") {
 		t.Fatalf("unexpected output: %s", buf.String())
 	}
 }
